@@ -5,7 +5,10 @@ using UnityEngine;
 public class PickUp : MonoBehaviour
 {
     public Transform holdPoint; // Set this to the point where the object will be held.
-    private GameObject heldObject;
+    public GameObject heldObject;
+    public GameObject mainUi;
+    public AudioSource Source;
+    public AudioClip[] SourceClip;
 
     void Update()
     {
@@ -13,10 +16,13 @@ public class PickUp : MonoBehaviour
         {
             heldObject.GetComponent<Rigidbody>().useGravity = true;
             heldObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
+            heldObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezeRotation;
 
             heldObject.transform.parent = null;
             heldObject.GetComponent<BoxCollider>().enabled = true;
             heldObject = null;
+            mainUi.SetActive(false);
+            Source.PlayOneShot(SourceClip[1]);
         }
     }
 
@@ -34,6 +40,8 @@ public class PickUp : MonoBehaviour
                 heldObject.transform.position = holdPoint.position;
                 heldObject.transform.parent = holdPoint;
                 heldObject.GetComponent<BoxCollider>().enabled = false;
+                mainUi.SetActive(true);
+                Source.PlayOneShot(SourceClip[0]);
             }
 
         }

@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/laxer Assets/Terrain Shader/terrain shader.unity
+    guid: 57f82ce1424ba974cb91682c583e4f14
+  - enabled: 1
+    path: Assets/laxer Assets/Terrain Shader/Scene2.unity
+    guid: 731d4526150a9f8479e6635488690e4a
   m_configObjects: {}

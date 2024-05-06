@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Fire
   - Sphere
+  - Box 1
+  - Box 2
+  - Box 3
   layers:
   - Default
   - TransparentFX
